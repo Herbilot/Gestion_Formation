@@ -36,11 +36,11 @@
       <td>{{$candidat->sexe}}</td>
       <td>{{$candidat->niveauEtude}}</td>
       <td>
-        <a class="btn btn-primary" href="">
+        <a class="btn btn-primary" href="{{ url('candidats/'.$candidat->id.'/modifier') }}">
         <span><i class="bi bi-pencil ms-2"></i></span>
         </a>
 
-        <a class="btn btn-danger" href="">
+        <a class="btn btn-danger" href="{{ url('candidats/'.$candidat->id.'/supprimer') }}">
         <span><i class="bi bi-trash3 ms-2"></i></span>
         </a>
 

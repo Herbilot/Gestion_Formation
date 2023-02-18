@@ -54,4 +54,6 @@ Route::get("/candidats", [candidatController::class, "listecandidats"]);
 Route::get("/candidats/{id}/details", [candidatController::class, "detailscandidat"]);
 Route::get("/candidats/ajouter", [candidatController::class, "ajoutcandidat"]);
 Route::post("/candidats/enregistrer", [candidatController::class, "enregistrercandidat"]);
+Route::get("/candidats/{id}/modifier", [candidatController::class, "modifierCandidat"]);
+Route::post("/candidats/{id}/update", [candidatController::class, "majCandidat"]);
 Route::get("/candidats/{id}/supprimer", [candidatController::class, "supprimerCandidat"]);

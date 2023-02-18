@@ -59,6 +59,7 @@
             </div>
           </div>
         </div>
+
         
         
         <div class="col-md-6 mb-3 h-100">
@@ -72,6 +73,21 @@
           </div>
         </div>
       </div>
+      
+    <div class="row">
+    <div class="col-md-6 mb-3 h-100">
+          <div class="card">
+            <div class="card-header">
+              Repartition par sexe
+            </div>
+            <div class="card-body">
+              <canvas class="chart" id="ctx"></canvas>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 	var _yAgeData=JSON.parse('{!! json_encode($ages) !!}');
@@ -82,6 +98,7 @@
 </script>
 <script src="{{asset('assets/age.js')}}"></script>
 <script src="{{asset('assets/sexe.js')}}"></script>
+<script src="{{asset('assets/test.js')}}"></script>
     @endsection
   <!-- end main section -->
 

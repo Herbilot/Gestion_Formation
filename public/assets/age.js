@@ -9,7 +9,7 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: _yAgeData,
     datasets: [{
-      label: "Registration",
+      label: " Age",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
       data: _xAgeData,
@@ -25,13 +25,13 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 6
+          
         }
       }],
       yAxes: [{
         ticks: {
           min: 0,
-          max: 10,
+          maxTicksLimit: 5
           
         },
         gridLines: {
