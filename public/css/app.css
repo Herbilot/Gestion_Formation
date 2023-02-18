@@ -1,0 +1,52 @@
+/* variable */
+:root{
+    /*store the width of the offcanvas*/
+    --offcanvas-width: 270px;
+  
+    /*store the default height of the bootstap navbar to move the side bar from top*/
+    --navbarHeight: 56px;
+  }
+  .side-bar{
+    width: var(--offcanvas-width);
+  }
+  
+  .sidebar-link{
+    display: flex;
+    align-items: center;
+  }
+  .sidebar-link .right-icon{
+    display: inline-flex;
+    transition: all ease 0.25s;
+  }
+  .sidebar-link[aria-expanded="true"] .right-icon{
+    transform: rotate(180deg);
+  }
+  .formation-item{
+    text-align: left;
+  }
+  
+  /*media*/
+    /*make the offcanvas visible on large screen*/
+  @media (min-width: 992px) {
+    body{
+      overflow: auto !important;
+    }
+  /*turn the effect of clicling on the button*/
+    .offcanvas-backdrop::before{
+      display: none;
+    }
+  
+    main{
+      margin-left: var(--offcanvas-width)
+    }
+  
+    .side-bar{
+      transform: none;
+      visibility: visible !important;
+      top: var(--navbarHeight);
+      /*calulate the remaining space after moving the sidebar down from 56 px*/
+      height: calc(100% - var(--navbarHeight));
+    }
+  
+  }
+  
