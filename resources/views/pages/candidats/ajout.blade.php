@@ -79,8 +79,8 @@
                         </div>
                         @enderror
                     </div>
-                    <button class="btn btn-primary mt-3" type="submit">Save </button>
-                    <a href="{{url('candidats')}}" class="btn btn-danger mt-3">Cancel</a>
+                    <button class="btn btn-primary mt-3" type="submit">Enregistrer </button>
+                    <a href="{{url('candidats')}}" class="btn btn-danger mt-3">Annuler</a>
                 </form>
             </div>
         </div>

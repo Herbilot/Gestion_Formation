@@ -9,7 +9,7 @@
                         {{Session::get('success')}}
                     </div>
                 @endif
-                <form method="post" action="{{url('candidats/enregistrer')}}">
+                <form method="post" action="{{url('formations/enregister')}}">
                     @csrf
                     <div class="form-group">
                         <label for="nom">Nom</label>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="debut">Date de début</label>
-                        <input name="debut" type="date" class="form-control" id="debut" placeholder="18/02/2023" value="{{old('debut')}}">
+                        <input name="debut" type="date" class="form-control" id="debut" value="{{old('debut')}}">
                         @error('debut')
                         <div class="alert alert-danger" role="alert">
                         {{$message}}
@@ -51,19 +51,19 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="sexe">Is started ?</label>
-                        <select name="sexe" class="form-control" id="sexe" value="{{old('sexe')}}">
-                        <option>Oui</option>
-                        <option>Non</option>
+                        <label for="isStarted">Is started ?</label>
+                        <select name="isStarted" class="form-control" id="isStarted" value="{{old('isStarted')}}">
+                        <option>1</option>
+                        <option>0</option>
                         </select>
-                        @error('sexe')
+                        @error('isStarted')
                         <div class="alert alert-danger" role="alert">
                         {{$message}}
                         </div>
                         @enderror
                     </div>
                     <button class="btn btn-primary mt-3" type="submit">Enregistrer </button>
-                    <a href="{{url('projects')}}" class="btn btn-danger mt-3">Annuler</a>
+                    <a href="{{url('formations')}}" class="btn btn-danger mt-3">Annuler</a>
                 </form>
             </div>
         </div>

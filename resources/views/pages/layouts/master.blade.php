@@ -31,14 +31,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="form-inline ms-auto my-2 my-lg-0">
-        <div class="input-group my-3 my-lg-0">
-          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
-          </div>
-        </div>
-      </form>
+      
       <ul class="navbar-nav">
         <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,32 +70,6 @@
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3">interfaces</div>
           </li>
-          <!-- formation -->
-          <li>
-            <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-              <span class="me-2"><i class="bi bi-book-half"></i></span>
-              <span>Formations</span>
-              <span class="right-icon ms-auto"><i class="bi bi-chevron-down"></i></span>
-            </a>
-            <div class="collapse" id="collapseExample">
-              <ul class="navbar-nav ps-3">
-                <li>
-                  <a class="nav-link px-3" href="{{ url('formations') }} ">
-                    <span class="me-2"><i class="bi bi-bookshelf"></i></span>
-                    <span class="formation-item">Voir toutes formations</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="nav-link px-3" href="{{ url('formations/ajouter') }}">
-                    <span class="me-2"><i class="bi bi-plus-circle"></i></i></span>
-                    <span class="formation-item">Ajouter une formation</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <!-- end formation -->
-
           <!-- candidat -->
           <li class="mt-3">
             <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -129,6 +96,34 @@
             </div>
           </li>
           <!-- end candidat -->
+
+          <!-- formation -->
+          <li>
+            <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <span class="me-2"><i class="bi bi-book-half"></i></span>
+              <span>Formations</span>
+              <span class="right-icon ms-auto"><i class="bi bi-chevron-down"></i></span>
+            </a>
+            <div class="collapse" id="collapseExample">
+              <ul class="navbar-nav ps-3">
+                <li>
+                  <a class="nav-link px-3" href="{{ url('formations') }} ">
+                    <span class="me-2"><i class="bi bi-bookshelf"></i></span>
+                    <span class="formation-item">Voir toutes formations</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link px-3" href="{{ url('formations/ajouter') }}">
+                    <span class="me-2"><i class="bi bi-plus-circle"></i></i></span>
+                    <span class="formation-item">Ajouter une formation</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- end formation -->
+
+          
           <li class="my-4">
             <hr class="dropdown-divider">
           </li>

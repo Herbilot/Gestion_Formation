@@ -17,8 +17,8 @@
         <table class="table table-striped mt-3">
   <thead>
     <tr>
-      <th scope="col">Nom</th>
       <th scope="col">Prénom</th>
+      <th scope="col">Nom</th>
       <th scope="col">Email</th>
       <th scope="col">Age</th>
       <th scope="col">Sexe</th>
@@ -46,10 +46,7 @@
 
         <a class="btn btn-success" href="{{ url('candidats/'.$candidat->id.'/details') }}">
         <span><i class="bi bi-three-dots ms-2"></i></span>
-        </a>
-        
-        
-        
+        </a> 
       </td>
     </tr>
     @endforeach

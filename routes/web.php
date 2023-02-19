@@ -39,15 +39,21 @@ Route::get('/tableau-bord', function () {
         $sexes[] = $sexe;
         $sexeCpt[] = count($values);
     }
+    $func = "";
 
     return view('/pages/statistiques/statistiques', compact('ageData','ages', 'ageCpt',
-     'sexeData', 'sexes', 'sexeCpt'));
+     'sexeData', 'sexes', 'sexeCpt', 'func'));
 });
 
 /*Routes pour les formations*/
 Route::get("/formations", [formationController::class, "listeformations"]);
+Route::get("/formations/{id}/details", [formationController::class, "detailsformation"]);
 Route::get("formations/ajouter", [formationController::class, "ajoutformation"]);
 Route::post("formations/enregister", [formationController::class, "enregistrerformation"]);
+Route::get("/formations/{id}/modifier", [formationController::class, "modifierFormation"]);
+Route::post("/formations/{id}/update", [formationController::class, "majFormation"]);
+Route::get("/formations/{id}/supprimer", [formationController::class, "supprimerFormation"]);
+Route::get("/formations/rechercher", [formationController::class, "rechercheFormation"]);
 
 /*Routes pour les candidats*/
 Route::get("/candidats", [candidatController::class, "listecandidats"]);
