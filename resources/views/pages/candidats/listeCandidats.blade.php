@@ -12,7 +12,7 @@
     <div class="card">
         <div class="card-header">
             Liste des candidats
-            <form class="form-inline ms-auto my-2 my-lg-0" method="GET" action="{{url('formations/rechercher')}}">
+            <form class="form-inline ms-auto my-2 my-lg-0" method="GET" action="{{url('candidats/rechercher')}}">
         <div class="input-group my-3 my-lg-0">
           <input type="text" class="form-control" name="recherche" placeholder="rechercher" aria-label="recherche" aria-describedby="button-addon2">
           <div class="input-group-append">

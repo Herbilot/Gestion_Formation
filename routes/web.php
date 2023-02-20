@@ -42,6 +42,7 @@ Route::post("/candidats/enregistrer", [candidatController::class, "enregistrerca
 Route::get("/candidats/{id}/modifier", [candidatController::class, "modifierCandidat"]);
 Route::post("/candidats/{id}/update", [candidatController::class, "majCandidat"]);
 Route::get("/candidats/{id}/supprimer", [candidatController::class, "supprimerCandidat"]);
+Route::get("/candidats/rechercher", [candidatController::class, "rechercheCandidat"]);
 Route::get("/candidats/{id}/ajout-formation", [candidatController::class, "ajoutFormation"]);
 
 /*Route pour les référentiels*/
@@ -50,3 +51,4 @@ Route::get("/referentiels/ajouter", [referentielController::class, "ajouterRefer
 Route::post("/referentiels/enregistrer", [referentielController::class, "enregistrerReferentiel"]);
 Route::get("/referentiels/{id}/details", [referentielController::class, "detailsreferentiel"]);
 Route::get("/referentiels/{id}/ajout-formation", [referentielController::class, "ajoutFormation"]);
+Route::get("/referentiels/rechercher", [referentielController::class, "rechercheReferentiel"]);

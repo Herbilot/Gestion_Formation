@@ -75,8 +75,8 @@
     
 
     <div class="row">
-      <div class="col-md-6">
-        <div class="card mb-4">
+      <div class="col-md-6 mb-3 h-100">
+        <div class="card ">
           <div class="card-header bg-primary">
             <span>Nombre total de candidats par formations</span>
           </div>
@@ -106,8 +106,8 @@
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card mb-4">
+      <div class="col-md-6 mb-3 h-100">
+        <div class="card">
           <div class="card-header bg-warning">
             <span>Nombre total de formations par référentiel</span>
           </div>
@@ -136,6 +136,37 @@
           </div>
         </div>
       </div>
+
+      <div class="col-md-6 mb-3 h-100">
+        <div class="card">
+          <div class="card-header bg-warning">
+            <span>Nombre total de formations par référentiel</span>
+          </div>
+          <div class="card-body">
+          <table class="table">
+  <thead >
+    <tr>
+      <th scope="col">Types</th>
+      <th scope="col">Total de formations</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($types as $ref)
+    <tr>
+      <td>{{$ref->libelle}}</td>
+      
+      <td>
+        {{count($ref->referentiel->formation)}}
+      </td>
+      
+    </tr>
+    @endforeach
+    
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
     </div>
 
    
@@ -143,7 +174,13 @@
       </div>
     </div>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script>src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"</script>
+
+
+
+
+
 <script type="text/javascript">
 	var _yAgeData=JSON.parse('{!! json_encode($ages) !!}');
 	var _xAgeData=JSON.parse('{!! json_encode($ageCpt) !!}');

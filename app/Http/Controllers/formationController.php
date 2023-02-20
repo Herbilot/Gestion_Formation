@@ -106,10 +106,10 @@ class formationController extends Controller
 
    public function rechercheFormation(Request $request){
     $terme = trim($request->recherche);
-    $resultat = formation::query()->where('nom', 'like', "%{$terme}%")->orWhere('description', 'like', "%{$terme}%")->get();
+    $resultat = formation::query()->where('nom', 'ilike', "%{$terme}%")->orWhere('description', 'like', "%{$terme}%")->get();
     $func = url('formations/rechercher');
     $test = $terme;
-    return view('pages/recherche/recherche', compact('resultat', 'test'));
+    return view('pages/recherche/rechercheFormation', compact('resultat', 'test'));
 
    }
 

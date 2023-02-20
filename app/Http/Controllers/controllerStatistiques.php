@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Candidat;
 use App\Models\Formation;
 use App\Models\Referentiel;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class controllerStatistiques extends Controller
@@ -37,10 +38,11 @@ class controllerStatistiques extends Controller
 
          $formations = Formation::get();
          $referentiels = Referentiel::all();
+         $types = Type::all();
         
 
      
          return view('/pages/statistiques/statistiques', compact('ageData','ages', 'ageCpt',
-          'sexeData', 'sexes', 'sexeCpt', 'formations', 'referentiels'));
+          'sexeData', 'sexes', 'sexeCpt', 'formations', 'referentiels', 'types'));
     }
 }

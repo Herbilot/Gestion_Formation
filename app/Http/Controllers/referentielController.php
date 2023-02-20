@@ -66,4 +66,10 @@ class referentielController extends Controller
         return redirect('referentiels/'.$id.'/details')->with('success', 'formation ajoutée au referentiel avec succès !');
 
     }
+    public function rechercheReferentiel(Request $request){
+        $terme = trim($request->recherche);
+        $resultat = referentiel::query()->where('libelle', 'ilike', "%{$terme}%")->get();
+        
+        return view('pages/recherche/rechercheReferentiel', compact('resultat'));
+    }
 }

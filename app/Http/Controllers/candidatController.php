@@ -119,6 +119,12 @@ class candidatController extends Controller
         return redirect('candidats/'.$id.'/details')->with('success', 'formation ajoutée au referentiel avec succès !');
 
     }
-    
+
+    public function rechercheCandidat(Request $request){
+        $terme = trim($request->recherche);
+        $resultat = Candidat::query()->where('nom', 'ilike', "%{$terme}%")->orWhere('prenom', 'ilike', "%{$terme}%")->get();
+        
+        return view('pages/recherche/rechercheCandidat', compact('resultat'));
+    }
 
 }
