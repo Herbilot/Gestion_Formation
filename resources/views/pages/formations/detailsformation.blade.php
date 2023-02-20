@@ -4,32 +4,32 @@
 @section('content')
 <div class="container-fluid">
 
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-lg-6">
-                        <h4>Table des référentiels associés à la formation {{$formation->nom}} </h4>
-                        </div>
-                        <div class="col-lg-6">
-                        <button type="button" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <span><i class="bi bi-link-45deg"></i></span>
-                        <span>associer un nouveau référentiel</span>
-                    </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group">
-                        @foreach ($formation->referentiel as $referentiel)
-                        <li>{{$referentiel->libelle}}</li>
-                        @endforeach
-                    </ul>
-                </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-lg-6">
+              <h4><small>Table des référentiels associés à la formation: </small> {{$formation->nom}} </h4>
             </div>
+            <div class="col-lg-6">
+              <button type="button" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <span><i class="bi bi-link-45deg"></i></span>
+                <span>associer un nouveau référentiel</span>
+              </button>
+            </div>
+          </div>
         </div>
+        <div class="card-body">
+          <ul class="list-group">
+            @foreach ($formation->referentiel as $referentiel)
+            <li class="list-group-item list-group-item-action ">{{$referentiel->libelle}}</li>
+            @endforeach
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- Modal -->
@@ -42,20 +42,20 @@
       </div>
       <div class="modal-body">
         <form action="{{url('formations/'.$formation->id.'/ajout-referentiel')}}">
-        <div class="form-group">
-        <select name="formation" class="form-control" id="formation" value="{{old('formation')}}">
-            @foreach ($referentiels as $referentiel)
-            <option value="{{$referentiel->id}}">{{$referentiel->libelle}}</option>
-            @endforeach
-        </select>
-        @error('formation')
-        <div class="alert alert-danger" role="alert">
-        {{$message}}
-        </div>
-        @enderror
-    </div>
-        
-      
+          <div class="form-group">
+            <select name="formation" class="form-control" id="formation" value="{{old('formation')}}">
+              @foreach ($referentiels as $referentiel)
+              <option value="{{$referentiel->id}}">{{$referentiel->libelle}}</option>
+              @endforeach
+            </select>
+            @error('formation')
+            <div class="alert alert-danger" role="alert">
+              {{$message}}
+            </div>
+            @enderror
+          </div>
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

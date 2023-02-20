@@ -8,15 +8,15 @@
         </div>
         <div class="card">
             <div class="card-body">
-               <table>
-                @foreach ($resultat as $referentiel)
+                <table>
+                    @foreach ($resultat as $referentiel)
                     <tbody>
                         <tr>
                             <td><a href="{{url('referentiels/'.$referentiel->id.'/details')}}">{{$referentiel->libelle}}</a></td>
                         </tr>
                     </tbody>
-                @endforeach
-               </table>
+                    @endforeach
+                </table>
 
 
             </div>
@@ -27,4 +27,3 @@
 
 </div>
 @endsection
-
