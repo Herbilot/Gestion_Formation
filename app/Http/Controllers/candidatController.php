@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidat;
+use App\Models\CandidatFormation;
 use App\Models\Formation;
 use Illuminate\Http\Request;
 
@@ -54,8 +55,13 @@ class candidatController extends Controller
 
     public function detailscandidat($id){
         $candidat = Candidat::where('id', '=', $id)->first();
+        $f = [];
+        foreach ($candidat->formations as $formation){
+            $f[] = $formation;
+        }
+        $formations = Formation::get();
 
-        return view('pages/candidats/detailsCandidat', compact('candidat'));
+        return view('pages/candidats/detailsCandidat', compact('candidat', 'formations','f'));
     }
 
     public function modifierCandidat(Request $request, $id){
@@ -102,6 +108,16 @@ class candidatController extends Controller
         $candidat = candidat::findOrFail($id);
         $candidat->delete();
         return redirect('candidats')->with('success', 'Candidat supprimé avec succès !');
+    }
+
+    public function ajoutFormation(Request $request, $id){
+        $formation = new CandidatFormation();
+        $formation->candidat_id = $id;
+        $formation->formation_id =request('formation');
+        $formation->save();
+
+        return redirect('candidats/'.$id.'/details')->with('success', 'formation ajoutée au referentiel avec succès !');
+
     }
     
 

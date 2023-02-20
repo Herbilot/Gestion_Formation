@@ -12,6 +12,6 @@ class Referentiel extends Model
         return $this->hasOne(type::class);
     }
     public function formation(){
-        return $this->BelongsToMany(formation::class);
+        return $this->BelongsToMany(formation::class, 'formation_referentiels');
     }
 }

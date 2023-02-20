@@ -20,7 +20,7 @@ class Formation extends Model
     public function candidat(){
         return $this->BelongsToMany(candidat::class);
     }
-    public function refernetiel(){
-        return $this->belongsToMany(referentiel::class);
+    public function referentiel(){
+        return $this->belongsToMany(referentiel::class, 'formation_referentiels');
     }
 }

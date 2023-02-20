@@ -127,6 +127,14 @@
           <li class="my-4">
             <hr class="dropdown-divider">
           </li>
+
+          <!-- referentiel -->
+          <li>
+            <a class="nav-link px-3" href="{{url('referentiels')}}">
+              <span class="me-2"><i class="bi bi-database"></i></span>
+              <span>Référentiel</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- end navigation items -->

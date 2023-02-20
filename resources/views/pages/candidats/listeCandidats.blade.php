@@ -12,6 +12,14 @@
     <div class="card">
         <div class="card-header">
             Liste des candidats
+            <form class="form-inline ms-auto my-2 my-lg-0" method="GET" action="{{url('formations/rechercher')}}">
+        <div class="input-group my-3 my-lg-0">
+          <input type="text" class="form-control" name="recherche" placeholder="rechercher" aria-label="recherche" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit" id="button-addon2"><i class="bi bi-search"></i></button>
+          </div>
+        </div>
+      </form>
         </div>
         <div class="card body">
         <table class="table table-striped mt-3">

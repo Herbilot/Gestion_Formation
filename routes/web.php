@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\candidatController;
 use App\Http\Controllers\formationController;
+use App\Http\Controllers\referentielController;
 use App\Models\Candidat;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +55,7 @@ Route::get("/formations/{id}/modifier", [formationController::class, "modifierFo
 Route::post("/formations/{id}/update", [formationController::class, "majFormation"]);
 Route::get("/formations/{id}/supprimer", [formationController::class, "supprimerFormation"]);
 Route::get("/formations/rechercher", [formationController::class, "rechercheFormation"]);
+Route::get("/formations/{id}/ajout-referentiel", [formationController::class, "ajoutReferentiel"]);
 
 /*Routes pour les candidats*/
 Route::get("/candidats", [candidatController::class, "listecandidats"]);
@@ -63,3 +65,11 @@ Route::post("/candidats/enregistrer", [candidatController::class, "enregistrerca
 Route::get("/candidats/{id}/modifier", [candidatController::class, "modifierCandidat"]);
 Route::post("/candidats/{id}/update", [candidatController::class, "majCandidat"]);
 Route::get("/candidats/{id}/supprimer", [candidatController::class, "supprimerCandidat"]);
+Route::get("/candidats/{id}/ajout-formation", [candidatController::class, "ajoutFormation"]);
+
+/*Route pour les référentiels*/
+Route::get("/referentiels", [referentielController::class, "listereferentiel"]);
+Route::get("/referentiels/ajouter", [referentielController::class, "ajouterReferentiel"]);
+Route::post("/referentiels/enregistrer", [referentielController::class, "enregistrerReferentiel"]);
+Route::get("/referentiels/{id}/details", [referentielController::class, "detailsreferentiel"]);
+Route::get("/referentiels/{id}/ajout-formation", [referentielController::class, "ajoutFormation"]);

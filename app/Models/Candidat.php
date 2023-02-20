@@ -20,6 +20,6 @@ class Candidat extends Model
     ];
 
     public function formations():BelongsToMany{
-        return $this->belongsToMany(formation::class);
+        return $this->belongsToMany(formation::class, 'candidat_formations');
     }
 }

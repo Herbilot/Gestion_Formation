@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('referentiels', function (Blueprint $table) {
             $table->id();
             $table->string('libelle');
-            $table->boolean('validite');
+            $table->boolean('validated');
             $table->float('horaire');
             $table->timestamps();
         });

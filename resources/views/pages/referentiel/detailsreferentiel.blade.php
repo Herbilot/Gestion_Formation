@@ -1,7 +1,27 @@
 @extends('pages.layouts.master')
 
 @section('content')
+@section('content')
+@if(Session::has('success'))
+  <div class="alert alert-success" role="alert">
+      {{Session::get('success')}}
+  </div>
+@endif
 <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Details du référentiel: {{$referentiel->libelle}}</h4>
+                </div>
+                <div class="card-body">
+                    <h5>Validated: <small>{{$validated}}</small></h5>
+                    <h5>Horaires: <small>{{$referentiel->horaire}} heures</small></h5>
+                    <h5>Types: <small>{{$type->libelle}}</small> </h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col">
@@ -9,26 +29,22 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-lg-6">
-                        <h4>Table des formations du candidat {{$candidat->nom}} </h4>
+                        <h4>Liste des formations associées </h4>
                         </div>
                         <div class="col-lg-6">
                         <button type="button" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <span><i class="bi bi-link-45deg"></i></span>
-                        <span>inscrire à une nouvelle formation</span>
+                        <span>associer une nouvelle formation</span>
                     </button>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                  <ul>
-                    @if (count($f)==0)
-                    <h3>Aucune formation enregistrée</h3>
-                    @else
-                    @foreach ($f as $form)
-                    <li>{{$form->nom}}</li>
-                    @endforeach
-                    @endif
-                  </ul>  
+                    <ul class="list-group">
+                        @foreach ($referentiel->formation as $formation)
+                        <li class="list-group-item">{{$formation->nom}}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
@@ -44,7 +60,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{url('candidats/'.$candidat->id.'/ajout-formation')}}">
+        <form action="{{url('referentiels/'.$referentiel->id.'/ajout-formation')}}">
         <div class="form-group">
         <select name="formation" class="form-control" id="formation" value="{{old('formation')}}">
             @foreach ($formations as $formation)
@@ -68,4 +84,5 @@
     </div>
   </div>
 </div>
+
 @endsection
