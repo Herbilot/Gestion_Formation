@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\candidatController;
+use App\Http\Controllers\controllerStatistiques;
 use App\Http\Controllers\formationController;
 use App\Http\Controllers\referentielController;
 use App\Models\Candidat;
@@ -20,31 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('/pages/layouts/master');
 });
-Route::get('/tableau-bord', function () {
-    $ageData = Candidat::select('id','age')->get()->groupBy(function($ageData){
-       return $ageData->age;
-    });
-        $ages = [];
-        $ageCpt = [];
-    foreach($ageData as $age => $values){
-        $ages[] = $age;
-        $ageCpt[] = count($values);
-    }
-
-    $sexeData = Candidat::select('id','sexe')->get()->groupBy(function($sexeData){
-        return $sexeData->sexe;
-    });
-    $sexes = [];
-    $sexeCpt = [];
-    foreach($sexeData as $sexe => $values){
-        $sexes[] = $sexe;
-        $sexeCpt[] = count($values);
-    }
-    $func = "";
-
-    return view('/pages/statistiques/statistiques', compact('ageData','ages', 'ageCpt',
-     'sexeData', 'sexes', 'sexeCpt', 'func'));
-});
+Route::get('/tableau-bord', [controllerStatistiques::class,"stats"]);
 
 /*Routes pour les formations*/
 Route::get("/formations", [formationController::class, "listeformations"]);
