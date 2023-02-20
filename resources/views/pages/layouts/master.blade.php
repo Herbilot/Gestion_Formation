@@ -12,9 +12,9 @@
   <!-- end bootstap link -->
 
   <!-- custom css  -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
   <!-- end custom css -->
-  
+
 
 </head>
 
@@ -31,22 +31,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      
-      <ul class="navbar-nav">
-        <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-person-circle"></i>
-          </a>
 
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </div>
-      </ul>
-    </div>
   </nav>
   <!-- end navbar -->
 
@@ -73,12 +58,12 @@
           </li>
           <!-- candidat -->
           <li class="mt-3">
-            <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#candidat" role="button" aria-expanded="false" aria-controls="candidat">
               <span class="me-2"><i class="bi bi-book-half"></i></span>
               <span>Candidats</span>
               <span class="right-icon ms-auto"><i class="bi bi-chevron-down"></i></span>
             </a>
-            <div class="collapse" id="collapseExample">
+            <div class="collapse" id="candidat">
               <ul class="navbar-nav ps-3">
                 <li>
                   <a class="nav-link px-3" href="{{ url('candidats') }}">
@@ -100,12 +85,12 @@
 
           <!-- formation -->
           <li>
-            <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#formation" role="button" aria-expanded="false" aria-controls="formation">
               <span class="me-2"><i class="bi bi-book-half"></i></span>
               <span>Formations</span>
               <span class="right-icon ms-auto"><i class="bi bi-chevron-down"></i></span>
             </a>
-            <div class="collapse" id="collapseExample">
+            <div class="collapse" id="formation">
               <ul class="navbar-nav ps-3">
                 <li>
                   <a class="nav-link px-3" href="{{ url('formations') }} ">
@@ -124,7 +109,7 @@
           </li>
           <!-- end formation -->
 
-          
+
           <li class="my-4">
             <hr class="dropdown-divider">
           </li>
@@ -133,7 +118,7 @@
           <li>
             <a class="nav-link px-3" href="{{url('referentiels')}}">
               <span class="me-2"><i class="bi bi-database"></i></span>
-              <span>Référentiel</span>
+              <span>Référentiels</span>
             </a>
           </li>
         </ul>
@@ -153,8 +138,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <!-- end bootstap js -->
   <script src="{{asset('public')}}/js/scripts.js"></script>
-        
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 </body>
 
 </html>

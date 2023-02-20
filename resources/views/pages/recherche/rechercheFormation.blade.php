@@ -8,15 +8,15 @@
         </div>
         <div class="card">
             <div class="card-body">
-               <table>
-                @foreach ($resultat as $formation)
+                <table>
+                    @foreach ($resultat as $formation)
                     <tbody>
                         <tr>
                             <td><a href="{{url('formations/'.$formation->id.'/details')}}">{{$formation->nom}}</a></td>
                         </tr>
                     </tbody>
-                @endforeach
-               </table>
+                    @endforeach
+                </table>
 
 
             </div>
@@ -27,4 +27,3 @@
 
 </div>
 @endsection
-
