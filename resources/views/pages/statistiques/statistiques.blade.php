@@ -60,6 +60,7 @@
     <div class="col-md-6 mb-3 h-100">
       <div class="card" id="CS">
         <div class="card-header">
+
           Repartition Total des candidats par sexe
         </div>
         <div class="card-body">
